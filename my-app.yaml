@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/tasostasos/my-app
+    repoURL: https://github.com/tasostasos/my-app.git
     targetRevision: main
     path: my-app
     # OR if using Helm:

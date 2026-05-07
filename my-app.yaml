@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-app
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/tasostasos/my-app
+    targetRevision: main
+    path: my-app
+    # OR if using Helm:
+    # chart: my-app
+    # helm:
+    #   valueFiles:
+    #   - values.yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kubedev
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

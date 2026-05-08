@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/tasostasos/my-app.git
     targetRevision: main
-    path: my-app
+    path: .
     # OR if using Helm:
     # chart: my-app
     # helm:
